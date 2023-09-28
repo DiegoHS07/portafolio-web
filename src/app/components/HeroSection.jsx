@@ -9,20 +9,20 @@ export const HeroSection = () => {
     <section>
         <div className="grid grid-cols-1 sm:grid-cols-12">
             <div className="col-span-7 place-self-center text-center sm:text-left">
-                <h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold">
+                <h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold h-36 md:h-33">
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-green-700">
-                        Hola, Soy {""}
+                        Hola, Soy {" "}
                     </span>
                     <br />
                     <TypeAnimation
                         sequence={[
                             'Diego Higuera',
                             3000, 
-                            'Web Developer',
+                            'Desarrollador web',
                             3000,
-                            'Frontend Developer',
+                            'Desarrollador frontend',
                             3000,
-                            'Junior Mobile Developer',
+                            'Desarrollador móvil',
                             3000
                         ]}
                         wrapper="span"
@@ -30,6 +30,7 @@ export const HeroSection = () => {
                         repeat={Infinity}
                     />
                 </h1>
+                <br />
                 <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
                 Me apasiona el desarrollo web y estoy entusiasmado por formar parte de un equipo proactivo que me permita crecer profesionalmente.
                 </p>
@@ -45,7 +46,7 @@ export const HeroSection = () => {
             <div className="col-span-5 place-self-center mt-8 lg:mt-0">
                 <div className="rounded-full bg-[#181818] w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] relative">
                     <Image
-                        src="/images/hero-image.png"
+                        src="/images/hero-image-1.png"
                         alt="Foto perfil portafolio"
                         className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                         width={300}
