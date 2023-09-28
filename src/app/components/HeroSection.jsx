@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { TypeAnimation } from 'react-type-animation';
 
 
-export const HeroSection = () => {
+const HeroSection = () => {
   return (
     <section>
         <div className="grid grid-cols-1 sm:grid-cols-12">
@@ -58,3 +58,5 @@ export const HeroSection = () => {
     </section>
   )
 }
+
+export default HeroSection
