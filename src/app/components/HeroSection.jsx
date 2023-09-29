@@ -15,6 +15,7 @@ const HeroSection = () => {
                     </span>
                     <br />
                     <TypeAnimation
+                        omitDeletionAnimation={true}
                         sequence={[
                             'Diego Higuera',
                             3000, 
@@ -32,7 +33,7 @@ const HeroSection = () => {
                 </h1>
                 <br />
                 <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
-                Me apasiona el desarrollo web y estoy entusiasmado por formar parte de un equipo proactivo que me permita crecer profesionalmente.
+                    Me apasiona el desarrollo web y estoy entusiasmado por formar parte de un equipo proactivo que me permita crecer profesionalmente.
                 </p>
                 <div>
                     <button className="px-6 inline-block py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-blue-700 to-green-700 bg-white hover:bg-slate-200 text-white">
@@ -51,6 +52,7 @@ const HeroSection = () => {
                         className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                         width={300}
                         height={300}
+                        priority
                     />
                 </div>
             </div>
