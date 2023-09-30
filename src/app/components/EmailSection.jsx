@@ -16,32 +16,26 @@ const EmailSection = () => {
         message: e.target.message.value,
     };
 
-    //console.log(data);
-
-    const JSONdata = JSON.stringify(data);
-
-    console.log(JSONdata);
-
-    const response = await fetch('/pages/api/email', {
+    const response = await fetch('/api/send', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            "Accept": "application/json",
+            "Access-Control-Allow-Origin": "*",
         },
-        body: JSONdata,
+        body: JSON.stringify(data),
     });
-
-    //const resData = await response.json();
-    //console.log(resData)
 
     if(response.status === 200){
         console.log("Mensaje enviado");
+        e.target.email.value = '';
+        e.target.subject.value = '';
+        e.target.message.value = '';
         setEmailSubmitted(true);
     }
   }
 
-  return <section className='grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 relative'>
-    <div className='bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-950 to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2'>
+  return <section className='contact grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 relative'>
+    <div className='bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-secondary-950 to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2'>
     </div>
     <div className='z-10'>
         <h5 className='text-xl font-bold text-white my-2'>Vamos a conectar</h5>
@@ -50,7 +44,10 @@ const EmailSection = () => {
             Actualmente estoy en busca de nuevas oportunidades, si tienes una pregunta o quieres contactar conmigo envíame un mensaje. Te responderé con mucho gusto.
         </p>
         <div className='socials flex flex-row gap-2'>
-            <Link target='blank' href="https://github.com/DiegoHS07">
+            <Link
+                target='blank' 
+                href="https://github.com/DiegoHS07"
+            >
                 <Image src={GithubIcon} alt='Icono Github'/>
             </Link>
             <Link target='blank' href="https://www.linkedin.com/in/diego-alejandro-higuera-sierra-dev/">
@@ -109,13 +106,13 @@ const EmailSection = () => {
             </div>
             <button
                 type='submit'
-                className='bg-green-600 hover:bg-green-700 text-white font-medium py-2.5 px-5 rounded-lg w-full'
+                className='bg-primary-600 hover:bg-primary-700 text-white font-medium py-2.5 px-5 rounded-lg w-full'
             >
                 Enviar mensaje
             </button>
             {
                 emailSubmitted && (
-                    <p className='text-green-500 text-sm mt-2'>
+                    <p className='text-primary-500 text-sm mt-2'>
                         Email enviado correctamente!
                     </p>
                 )
