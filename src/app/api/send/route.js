@@ -1,11 +1,12 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
-const resend = new Resend("re_7SRLQRVk_NJXHgZy4Bte3xTm7rYsGSwne");
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request) {
-  const {email, subject, message} = await request.json();
-  console.log(request.json())
+  const {body} = await request.json();
+  const {email, subject, message} = await body;
+  
   try {
     const data = await resend.emails.send({
       from: 'Portafolio DH <onboarding@resend.dev>',
