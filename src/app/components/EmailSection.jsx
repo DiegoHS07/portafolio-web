@@ -70,7 +70,7 @@ const EmailSection = () => {
                     name="email" 
                     className='bg-[#18191E] border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5' 
                     required 
-                    placeholder='Juan@google.com'
+                    placeholder='persona@google.com'
                 />
             </div>
             <div className='mb-6'>
