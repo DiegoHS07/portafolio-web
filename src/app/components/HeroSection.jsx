@@ -56,11 +56,11 @@ const HeroSection = () => {
                 transition={{duration: 0.15}} 
                 className="col-span-5 place-self-center mt-8 lg:mt-0"
             >
-                <div className="rounded-full bg-[#181818] w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] relative">
+                <div className="rounded-full bg-[#181818] w-[250px] h-[250px] lg:w-[350px] lg:h-[350px] relative">
                     <Image
-                        src="/images/hero-image-1.png"
+                        src="/images/Foto-Perfil.jpg"
                         alt="Foto perfil portafolio"
-                        className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                        className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 rounded-full"
                         width={300}
                         height={300}
                         priority
