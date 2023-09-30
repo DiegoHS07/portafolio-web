@@ -48,7 +48,6 @@ const Navbar = () => {
                                 <NavLink 
                                     href={link.path} 
                                     title={link.title}
-                                    
                                 />
                             </li>
                         ))

@@ -3,6 +3,7 @@ import React from 'react';
 import Image from 'next/image';
 import { TypeAnimation } from 'react-type-animation';
 import { motion } from "framer-motion";
+import Link from 'next/link';
 
 
 const HeroSection = () => {
@@ -42,12 +43,12 @@ const HeroSection = () => {
                     Me apasiona el desarrollo web y estoy entusiasmado por formar parte de un equipo proactivo que me permita crecer profesionalmente.
                 </p>
                 <div>
-                    <button className="px-6 inline-block py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-secondary-700 to-primary-700 bg-white hover:bg-slate-200 text-white">
+                    <a href='#contact' className="px-6 inline-block py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-secondary-700 to-primary-700 bg-white hover:bg-gradient-to-br hover:from-secondary-900 hover:to-primary-900 text-white cursor-pointer">
                         Contáctame
-                    </button>
-                    <button className="px-1 py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-primary-700  to-secondary-700 hover:bg-slate-800 text-white mt-3">
+                    </a>
+                    <Link href="./CV_Diego_Higuera_2023.pdf" target="_blank" download="CV_Diego_Higuera.pdf" className="block px-1 py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-primary-700  to-secondary-700 hover:bg-slate-800 text-white mt-3">
                         <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">Descarga mi CV</span>
-                    </button>
+                    </Link>
                 </div>
             </motion.div>
             <motion.div 
