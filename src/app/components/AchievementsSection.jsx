@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
 import { achievementsList } from "../data/achievementsList.js";
 const AnimatedNumbers = dynamic(() => import("react-animated-numbers"), {
@@ -9,10 +8,7 @@ const AnimatedNumbers = dynamic(() => import("react-animated-numbers"), {
 
 const AchievementsSection = () => {
     return (
-      <motion.div 
-        initial={{opacity:0, scale: 0.5}} 
-        animate={{opacity:1, scale: 1}} 
-        transition={{duration: 0.35}}  
+      <div
         className="py-8 px-4 xl:gap-16 sm:py-16 xl:px-16"
       >
         <div className="sm:border-[#33353F] sm:border rounded-md py-8 px-16 flex flex-col sm:flex-row items-center justify-between">
@@ -43,7 +39,7 @@ const AchievementsSection = () => {
             );
           })}
         </div>
-      </motion.div>
+      </div>
     );
   };
   
