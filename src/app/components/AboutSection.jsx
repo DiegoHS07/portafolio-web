@@ -2,6 +2,7 @@
 import React,{ useTransition, useState } from 'react';
 import Image from 'next/image';
 import TabButton from './TabButton';
+import { EyeIcon } from "@heroicons/react/24/outline";
 
 const TAB_DATA = [
     {
@@ -22,18 +23,6 @@ const TAB_DATA = [
         )
     },
     {
-        title: "Educación",
-        id: "education",
-        content: (
-            <ul className='list-disc pl-2'>
-                <li>Universidad Cooperativa de Colombia</li>
-                <li>Universidad Veracruzana - México</li>
-                <li>Universidad del País Vasco - España</li>
-                <li>SENA</li>
-            </ul>
-        )
-    },
-    {
         title: "Certificados",
         id: "certifications",
         content: (
@@ -47,16 +36,27 @@ const TAB_DATA = [
         )
     },
     {
+        title: "Educación",
+        id: "education",
+        content: (
+            <ul className='list-disc pl-2'>
+                <li className='mb-2'>Universidad Cooperativa de Colombia - Titulación en ingeniería de sistemas</li>
+                <li className='mb-2'>Movilidad académica en Universidad Veracruzana de México durante el 2020</li>
+                <li className='mb-2'>Movilidad académica en Universidad del País Vasco de España durante el 2022</li>
+                <li className='mb-2'>SENA - Titulación en tecnología en desarrollo y análisis de sistemas de información (ADSI)</li>
+            </ul>
+        )
+    },
+    {
         title: "Reconocimientos",
         id: "recognitions",
         content: (
             <ul className='list-disc pl-2'>
-                <li>Titulación con promedio superior</li>
-                <li>Segundo mejor resultado en pruebas SaberPro 2022</li>
-                <li>Reconocimiento por investigador en grupo SEMDRI</li>
-                <li>Trabajo de fin de grado con honores</li>
-                <li>Beneficiario beca Banco Santander movilidad académica internacional 2020</li>
-                <li>Movilidad académica  internacional México y España</li>
+                <li className='mb-2'>Titulación con promedio superior grado ingeniería</li>
+                <li className='mb-2'>Segundo mejor resultado en pruebas SaberPro 2022</li>
+                <li className='mb-2'>Reconocimiento por investigador en grupo universitario SEMDRI</li>
+                <li className='mb-2'>Trabajo de fin de grado de ingeniería con honores</li>
+                <li className='mb-2'>Beneficiario beca Banco Santander movilidad académica internacional 2020</li>
             </ul>
         )
     },
@@ -82,24 +82,24 @@ const AboutSection = () => {
                     Acerca de Mi
                 </h2>
                 <p className="text-base lg:text-lg">
-                    Soy un Ingeniero en Sistemas con tres años de experiencia, especializado en el desarrollo web en roles tanto de desarrollador frontend como fullstack. Aprendo rápidamente, siempre estoy en búsqueda de la ampliación de mis conocimientos y habilidades. Me entusiasma colaborar en equipos y crear aplicaciones excepcionales.
+                    Soy un Ingeniero en Sistemas con tres años de experiencia, especializado en el desarrollo web en roles tanto de desarrollador frontend como fullstack. Aprendo rápidamente, estoy en búsqueda de la ampliación de mis conocimientos y habilidades. Me entusiasma colaborar en equipos y crear aplicaciones excepcionales.
                 </p>
-                <div className="flex flex-wrap justify-start mt-8">
-                    <TabButton selectTab={() => handleTabChange("education")} active={tab=== "education"}>
+                <div className="flex sm:flex-wrap flex-col justify-center mt-8">
+                    <TabButton selectTab={() => handleTabChange("education")} active={tab=== "education"} className="mt-10">
                         {" "}
-                        Educación{" "}
+                        Educación {" "} 
                     </TabButton>
-                    <TabButton selectTab={() => handleTabChange("skills")} active={tab=== "skills"}>
+                    {/* <TabButton selectTab={() => handleTabChange("skills")} active={tab=== "skills"}>
                         {" "}
                         Habilidades{" "}
                     </TabButton>
                     <TabButton selectTab={() => handleTabChange("certifications")} active={tab=== "certifications"}>
                         {" "}
                         Certificados{" "}
-                    </TabButton>
+                    </TabButton> */}
                     <TabButton selectTab={() => handleTabChange("recognitions")} active={tab=== "recognitions"}>
                         {" "}
-                        Reconocimientos{" "}
+                        Reconocimientos {" "}
                     </TabButton>
                 </div>
                 <div className='mt-6'>
