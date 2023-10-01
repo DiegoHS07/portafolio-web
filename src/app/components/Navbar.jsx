@@ -1,30 +1,22 @@
 "use client";
 import Link from 'next/link';
 import React, { useState } from 'react';
+import { motion } from "framer-motion";
 import NavLink from '../components/NavLink';
 import {Bars3Icon, XMarkIcon} from "@heroicons/react/24/solid";
 import MenuOverlay from './MenuOverlay';
-
-const navLinks = [
-    {
-        title: "Acerca de mi",
-        path: "#about",
-    },
-    {
-        title: "Proyectos",
-        path: "#projects",
-    },
-    {
-        title: "Contáctame",
-        path: "#contact",
-    },
-];
+import { navLinks } from '../data/navLinks.js';
 
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
 
   return (
-    <nav className="fixed mx-auto border border-[#33353F] top-0 left-0 right-0 z-20 bg-[#121212] bg-opacity-100">
+    <motion.nav
+        initial={{opacity:0, scale: 0.5}} 
+        animate={{opacity:1, scale: 1}} 
+        transition={{duration: 0.35}}
+        className="fixed mx-auto border border-[#33353F] top-0 left-0 right-0 z-20 bg-[#121212] bg-opacity-100"
+    >
         <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2">
             <Link href={"/"} className="text-2xl md:text-5xl text-white font-semibold">
                 DH
@@ -58,7 +50,7 @@ const Navbar = () => {
         {
             navbarOpen ? <MenuOverlay links={navLinks} /> : null
         }
-    </nav>
+    </motion.nav>
   )
 }
 

@@ -3,41 +3,7 @@ import React, {useState, useRef} from 'react';
 import ProjectCard from './ProjectCard';
 import ProjectTag from './ProjectTag';
 import {motion, useInView} from "framer-motion";
-
-const projectsData = [
-    {
-        id: 1,
-        title: "Portafolio web con NextJs",
-        description: "Portafolio virtual donde puedo mostrar mi cv de forma innovadora",
-        image: "/images/projects/Portafolio-web.png",
-        tag: ["Todos", "Web"],
-        gitUrl: "https://github.com/DiegoHS07/portafolio-web",
-    },
-    {
-        id: 2,
-        title: "Pokedex con Lit-Element",
-        description: "Creación de pokedex demostrando mis habilidades al implementar API's",
-        image: "/images/projects/Pokedex-LitElement.png",
-        tag: ["Todos", "Web"],
-        gitUrl: "https://github.com/DiegoHS07/Pokedex-LitElement",
-    },
-    {
-        id: 3,
-        title: "SAAM",
-        description: "Creación proyecto fin de grado y presentado en ACOFI 2020 y 2021",
-        image: "/images/projects/SAAM.png",
-        tag: ["Todos", "Movil"],
-        gitUrl: "https://github.com/DiegoHS07/UCC_SAAM",
-    },
-    {
-        id: 4,
-        title: "Gladiadores APP",
-        description: "Creación videojuego RPG temática de gladiadores para Android",
-        image: "/images/projects/GLADIATOR.png",
-        tag: ["Todos", "Movil"],
-        gitUrl: "https://github.com/DiegoHS07/App_Gladiator/",
-    },
-];
+import { projectsData } from '../data/projectsData.js';
 
 const ProjectsSection = () => {
   const [tag, setTag] = useState("Todos");
@@ -58,7 +24,12 @@ const ProjectsSection = () => {
   };
 
   return (
-    <section id='projects' name="projects">
+    <motion.section 
+        id='projects' name="projects" 
+        initial={{opacity:0, scale: 0.5}} 
+        animate={{opacity:1, scale: 1}} 
+        transition={{duration: 0.35}}
+    >
         <h2 className='text-center text-4xl font-bold text-white mt-4 mb-4 md:mb-12'>
             Mis proyectos
         </h2>
@@ -99,7 +70,7 @@ const ProjectsSection = () => {
                 </motion.li>
             ))}
         </ul>
-    </section>
+    </motion.section>
   )
 }
 

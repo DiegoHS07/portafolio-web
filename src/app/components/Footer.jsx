@@ -8,7 +8,7 @@ const Footer = () => {
         <motion.div 
           initial={{opacity:0, scale: 0.5}} 
           animate={{opacity:1, scale: 1}} 
-          transition={{duration: 0.15}}
+          transition={{duration: 0.35}}
           className='container p-12 flex justify-between'
         >
             <span>DH</span>

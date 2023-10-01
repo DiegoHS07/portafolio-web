@@ -1,5 +1,6 @@
 "use client";
 import React, {useState} from 'react';
+import { motion } from "framer-motion";
 import GithubIcon from "../../../public/github-icon.svg";
 import LinkedInIcon from "../../../public/linkedin-icon.svg";
 import Link from 'next/link';
@@ -34,7 +35,13 @@ const EmailSection = () => {
     }
   }
 
-  return <section id='contact' name="contact" className='contact grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 relative'>
+  return <motion.section 
+    id='contact' name="contact" 
+    initial={{opacity:0, scale: 0.5}} 
+    animate={{opacity:1, scale: 1}} 
+    transition={{duration: 0.35}}
+    className='contact grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 relative'
+  >
     <div className='bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-secondary-950 to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2'>
     </div>
     <div className='z-10'>
@@ -119,7 +126,7 @@ const EmailSection = () => {
             }
         </form>
     </div>
-  </section>
+  </motion.section>
 }
 
 export default EmailSection

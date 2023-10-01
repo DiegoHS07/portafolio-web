@@ -1,4 +1,4 @@
-export const TAB_DATA = [
+export const aboutData = [
     {
         title: "Educación",
         id: "education",

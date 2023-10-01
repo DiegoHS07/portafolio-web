@@ -1,12 +1,13 @@
 "use client";
 import React, {useRef} from 'react';
+import { motion } from "framer-motion";
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/effect-flip';
 import 'swiper/css/pagination';
 import { Autoplay, EffectFlip, Pagination } from 'swiper/modules';
-import { TAB_DATA } from './TAB_DATA';
+import { aboutData } from '../data/aboutData.js';
 
 const AboutSection = () => {
   const progressCircle = useRef(null);
@@ -17,7 +18,12 @@ const AboutSection = () => {
   };
 
   return (
-    <section className='text-white'>
+    <motion.section 
+        initial={{opacity:0, scale: 0.5}} 
+        animate={{opacity:1, scale: 1}} 
+        transition={{duration: 0.35}} 
+        className='text-white'
+    >
         <div className='md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16'>
             <Image className='rounded-xl' src="/images/about-image.png" alt='Imagen sección acerca de mi' width={500} height={500}/>
             <div className='mt-4 md:mt-0 text-left flex flex-col h-full'>
@@ -45,7 +51,7 @@ const AboutSection = () => {
                         className="h-max max-w-max m-1"
                     >
                         {
-                            TAB_DATA.map((tab, index) => (
+                            aboutData.map((tab, index) => (
                                 <SwiperSlide key={index} className='p-10 justify-left'>                    
                                     <span className="text-left -ml-10 font-semibold text-primary-400 text-2xl" >
                                         {tab.title}
@@ -64,7 +70,7 @@ const AboutSection = () => {
                 </div>
             </div>
         </div>
-    </section>
+    </motion.section>
   )
 }
 
