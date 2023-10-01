@@ -1,76 +1,19 @@
 "use client";
-import React,{ useTransition, useState } from 'react';
+import React, {useRef} from 'react';
 import Image from 'next/image';
-import TabButton from './TabButton';
-import { EyeIcon } from "@heroicons/react/24/outline";
-
-const TAB_DATA = [
-    {
-        title: "Habilidades",
-        id: "skills",
-        content: (
-            <ul className='list-disc pl-2'>
-                <li>JavaScript</li>
-                <li>React</li>
-                <li>PHP</li>
-                <li>.NET ASP</li>
-                <li>MySQL</li>
-                <li>CELLS</li>
-                <li>Flutter</li>
-                <li>Kotlin</li>
-                <li>AWS</li>
-            </ul>
-        )
-    },
-    {
-        title: "Certificados",
-        id: "certifications",
-        content: (
-            <ul className='list-disc pl-2'>
-                <li>Diploma Ingeniero de sistemas</li>
-                <li>CSS - The Complete Guide 2022</li>
-                <li>TypeScript: Guía completa</li>
-                <li>Amazon AWS. Curso básico</li>
-                <li>Participación ACOFI 2020 y 2021</li>
-            </ul>
-        )
-    },
-    {
-        title: "Educación",
-        id: "education",
-        content: (
-            <ul className='list-disc pl-2'>
-                <li className='mb-2'>Universidad Cooperativa de Colombia - Titulación en ingeniería de sistemas</li>
-                <li className='mb-2'>Movilidad académica en Universidad Veracruzana de México durante el 2020</li>
-                <li className='mb-2'>Movilidad académica en Universidad del País Vasco de España durante el 2022</li>
-                <li className='mb-2'>SENA - Titulación en tecnología en desarrollo y análisis de sistemas de información (ADSI)</li>
-            </ul>
-        )
-    },
-    {
-        title: "Reconocimientos",
-        id: "recognitions",
-        content: (
-            <ul className='list-disc pl-2'>
-                <li className='mb-2'>Titulación con promedio superior grado ingeniería</li>
-                <li className='mb-2'>Segundo mejor resultado en pruebas SaberPro 2022</li>
-                <li className='mb-2'>Reconocimiento por investigador en grupo universitario SEMDRI</li>
-                <li className='mb-2'>Trabajo de fin de grado de ingeniería con honores</li>
-                <li className='mb-2'>Beneficiario beca Banco Santander movilidad académica internacional 2020</li>
-            </ul>
-        )
-    },
-
-];
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/effect-flip';
+import 'swiper/css/pagination';
+import { Autoplay, EffectFlip, Pagination } from 'swiper/modules';
+import { TAB_DATA } from './TAB_DATA';
 
 const AboutSection = () => {
-  const [tab, setTab] = useState("education");
-  const [isPending ,startTransition] = useTransition();
-
-  const handleTabChange = (id) => {
-    startTransition(() => {
-        setTab(id);
-    });
+  const progressCircle = useRef(null);
+  const progressContent = useRef(null);
+  const onAutoplayTimeLeft = (s, time, progress) => {
+    progressCircle.current.style.setProperty('--progress', 1 - progress);
+    progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
   };
 
   return (
@@ -84,26 +27,40 @@ const AboutSection = () => {
                 <p className="text-base lg:text-lg">
                     Soy un Ingeniero en Sistemas con tres años de experiencia, especializado en el desarrollo web en roles tanto de desarrollador frontend como fullstack. Aprendo rápidamente, estoy en búsqueda de la ampliación de mis conocimientos y habilidades. Me entusiasma colaborar en equipos y crear aplicaciones excepcionales.
                 </p>
-                <div className="flex sm:flex-wrap flex-col justify-center mt-8">
-                    <TabButton selectTab={() => handleTabChange("education")} active={tab=== "education"} className="mt-10">
-                        {" "}
-                        Educación {" "} 
-                    </TabButton>
-                    {/* <TabButton selectTab={() => handleTabChange("skills")} active={tab=== "skills"}>
-                        {" "}
-                        Habilidades{" "}
-                    </TabButton>
-                    <TabButton selectTab={() => handleTabChange("certifications")} active={tab=== "certifications"}>
-                        {" "}
-                        Certificados{" "}
-                    </TabButton> */}
-                    <TabButton selectTab={() => handleTabChange("recognitions")} active={tab=== "recognitions"}>
-                        {" "}
-                        Reconocimientos {" "}
-                    </TabButton>
-                </div>
-                <div className='mt-6'>
-                    {TAB_DATA.find((t) => t.id === tab).content}
+                <div className='mt-1'>
+                    <Swiper
+                        autoplay={{
+                            delay: 60000,
+                            disableOnInteraction: false,
+                        }}
+                        effect={'flip'}
+                        grabCursor={true}
+                        slidesPerView={1}
+                        loop={true}
+                        pagination={{
+                            clickable: true,
+                        }}
+                        modules={[Autoplay, EffectFlip, Pagination]}
+                        onAutoplayTimeLeft={onAutoplayTimeLeft}
+                        className="h-max max-w-max m-1"
+                    >
+                        {
+                            TAB_DATA.map((tab, index) => (
+                                <SwiperSlide key={index} className='p-10 justify-left'>                    
+                                    <span className="text-left -ml-10 font-semibold text-primary-400 text-2xl" >
+                                        {tab.title}
+                                    </span>
+                                    {tab.content}                
+                                </SwiperSlide>
+                            ))
+                        }
+                        <div className="autoplay-progress" slot="container-end">
+                            <svg viewBox="0 0 48 48" ref={progressCircle}>
+                                <circle cx="24" cy="24" r="20"></circle>
+                            </svg>
+                            <span ref={progressContent}></span>
+                        </div>
+                    </Swiper>
                 </div>
             </div>
         </div>
