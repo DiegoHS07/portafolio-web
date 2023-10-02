@@ -29,6 +29,7 @@ const ProjectsSection = () => {
         initial={{opacity:0, scale: 0.5}} 
         animate={{opacity:1, scale: 1}} 
         transition={{duration: 0.35}}
+        className='pt-20'
     >
         <h2 className='text-center text-4xl font-bold text-white mt-4 mb-4 md:mb-12'>
             Mis proyectos

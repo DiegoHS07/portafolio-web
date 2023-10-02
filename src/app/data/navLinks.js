@@ -4,6 +4,10 @@ export const navLinks = [
         path: "#about",
     },
     {
+        title: "Habilidades",
+        path: "#skills",
+    },
+    {
         title: "Proyectos",
         path: "#projects",
     },
