@@ -1,9 +1,9 @@
 "use client";
 import React from 'react';
 import {motion} from "framer-motion";
-import useWindowDimensions from "./../hooks/useWindowDimensions"; 
 import Image from 'next/image';
 import { skillsData } from '../data/skillsData.js';
+import {useWindowWidth} from '@react-hook/window-size';
 
 import 'swiper/css';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -12,8 +12,10 @@ import { Autoplay } from 'swiper/modules';
 const BASE_DIR = "/images/skills/";
 
 const SkillsSection = () => {
-  const { width } = useWindowDimensions();
- console.log(width);
+  const widthScreen = useWindowWidth();
+
+  const slidesPerView = (widthScreen < 550) ? (widthScreen < 470) ? 2 : 4 : 5
+
   return (
     <motion.section 
         id="skills" name="skills"
@@ -26,7 +28,7 @@ const SkillsSection = () => {
                 Mis habilidades
             </h2>
             <Swiper
-                slidesPerView={(width < 450) ? 2 : 5}
+                slidesPerView={slidesPerView}
                 loop={true}
                 spaceBetween={15}
                 centeredSlides={true}
