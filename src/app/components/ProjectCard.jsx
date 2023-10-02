@@ -43,11 +43,10 @@ const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl, skills })
                     </div>
                 </div>
             </div>
-            <div className="overlay rounded-xl items-center justify-center absolute top-0 left-0 w-full h-full bg-[#181818] bg-opacity-0 hidden group-hover:flex group-hover:bg-opacity-80 transition-all duration-500">
-                <Link href={gitUrl} target='blank' className='h-14 w-14 mr-2 border-2 relative rounded-full border-[#ADB7BE] hover:border-white' title='Ver en GitHub'>
-                    <CodeBracketIcon className='h-10 w-10 text-[#88898a] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  cursor-pointer hover:text-white'>
-                        asd
-                    </CodeBracketIcon>
+            <div className="overlay rounded-xl items-center justify-center absolute top-0 left-0 w-full h-full bg-[#181818] bg-opacity-0 hidden group-hover:flex group-hover:flex-col group-hover:gap-5 group-hover:bg-opacity-80 transition-all duration-500 ">
+                <Link href={gitUrl} target='blank' className='border-2 border-[#88898A] rounded-xl p-5 flex items-center gap-2 text-[#88898A] hover:text-white hover:border-white' title='Ver en GitHub'>
+                    <CodeBracketIcon className='h-10 w-10 '/>
+                    <span className=''>Ver en GitHub</span>  
                 </Link>
             </div>
         
