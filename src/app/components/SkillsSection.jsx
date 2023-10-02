@@ -1,12 +1,7 @@
 "use client";
 import React from 'react';
 import {motion} from "framer-motion";
-import dynamic from 'next/dynamic';
-const useWindowDimensions = dynamic(
-    () =>{
-        return import("./../hooks/useWindowDimensions");
-    },{ssr:false}
-); 
+import useWindowDimensions from "./../hooks/useWindowDimensions"; 
 import Image from 'next/image';
 import { skillsData } from '../data/skillsData.js';
 
@@ -18,7 +13,7 @@ const BASE_DIR = "/images/skills/";
 
 const SkillsSection = () => {
   const { width } = useWindowDimensions();
-
+ console.log(width);
   return (
     <motion.section 
         id="skills" name="skills"
