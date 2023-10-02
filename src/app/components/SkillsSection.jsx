@@ -14,7 +14,7 @@ const BASE_DIR = "/images/skills/";
 const SkillsSection = () => {
   const widthScreen = useWindowWidth();
 
-  const slidesPerView = (widthScreen < 550) ? (widthScreen < 470) ? 2 : 4 : 5
+  const slidesPerView = (widthScreen < 550) ? ( (widthScreen < 470) ? 2 : 4 ) : 5
 
   return (
     <motion.section 
@@ -22,7 +22,7 @@ const SkillsSection = () => {
         initial={{opacity:0, scale: 0.5}} 
         animate={{opacity:1, scale: 1}} 
         transition={{duration: 0.35}}
-        className='pt-20'>
+        className='pt-5'>
         <div className='container lg:h-60 h-40 my-20'>
             <h2 className='text-center text-4xl font-bold text-white mb-8 md:mb-12'>
                 Mis habilidades
@@ -41,7 +41,7 @@ const SkillsSection = () => {
                 className='w-full h-full left-auto m-auto mb-2 mt-2'    
             >
                 {skillsData.map((skill, index)=> ( 
-                    <SwiperSlide key={index}  className='rounded-xl  border-2 border-slate-600' >
+                    <SwiperSlide key={index} >
                         <Image
                             src={BASE_DIR+skill.icon}
                             alt="icono skill"

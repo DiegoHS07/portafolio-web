@@ -11,7 +11,7 @@ export const achievementsList = [
   },
   {
     metric: "Habilidades",
-    value: "10",
+    value: "20",
     prefix: "+",
   },
 ];
