@@ -1,7 +1,12 @@
 "use client";
 import React from 'react';
 import {motion} from "framer-motion";
-import useWindowDimensions from "./../hooks/useWindowDimensions";
+import dynamic from 'next/dynamic';
+const useWindowDimensions = dynamic(
+    () =>{
+        return import("./../hooks/useWindowDimensions");
+    },{ssr:false}
+); 
 import Image from 'next/image';
 import { skillsData } from '../data/skillsData.js';
 
