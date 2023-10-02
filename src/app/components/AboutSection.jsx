@@ -6,7 +6,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/effect-flip';
 import 'swiper/css/pagination';
-import { Autoplay, EffectFlip, Pagination } from 'swiper/modules';
+import 'swiper/css/navigation';
+import { Autoplay, EffectFlip, Pagination, Navigation } from 'swiper/modules';
 import { aboutData } from '../data/aboutData.js';
 
 const AboutSection = () => {
@@ -46,9 +47,10 @@ const AboutSection = () => {
                         pagination={{
                             clickable: true,
                         }}
-                        modules={[Autoplay, EffectFlip, Pagination]}
+                        navigation={true}
+                        modules={[Autoplay, EffectFlip, Pagination, Navigation]}
                         onAutoplayTimeLeft={onAutoplayTimeLeft}
-                        className="h-max max-w-max m-1"
+                        className="h-max max-w-max m-1 swiper-about"
                     >
                         {
                             aboutData.map((tab, index) => (

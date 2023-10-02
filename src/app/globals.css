@@ -6,6 +6,7 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --swiper-theme-color: green;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -54,4 +55,18 @@ body {
   stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
   stroke-dasharray: 125.6;
   transform: rotate(-90deg);
+}
+
+.swiper-about .swiper-button-prev,
+.swiper-about .swiper-button-next {
+  --swiper-navigation-size: 20px;
+  color: rgb(21 128 61);
+}
+
+.swiper-about .swiper-button-prev{
+  left: -1rem;
+}
+
+.swiper-pagination .swiper-pagination-bullet-active{
+  --swiper-pagination-color :rgb(21 128 61);
 }

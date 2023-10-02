@@ -5,8 +5,8 @@ export const aboutData = [
         content: (
             <ul className='list-disc pl-2 -ml-5 mt-4'>
                 <li className='mb-2'>Universidad Cooperativa de Colombia - Titulación en ingeniería de sistemas</li>
-                <li className='mb-2'>Movilidad académica en Universidad Veracruzana de México durante el 2020</li>
-                <li className='mb-2'>Movilidad académica en Universidad del País Vasco de España durante el 2022</li>
+                <li className='mb-2'>Movilidad académica en Universidad Veracruzana de México. Enero-Noviembre 2020</li>
+                <li className='mb-2'>Movilidad académica en Universidad del País Vasco de España. Enero-Junio 2022</li>
                 <li className='mb-2'>SENA - Titulación en tecnología en desarrollo y análisis de sistemas de información (ADSI)</li>
             </ul>
         )
