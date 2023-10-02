@@ -52,6 +52,10 @@ export const skillsData = [
         icon: "flutter.png",
     },
     {
+        name: "FIREBASE",
+        icon: "firebase.png",
+    },
+    {
         name: "KOTLIN",
         icon: "kotlin.png",
     },
