@@ -9,8 +9,6 @@ import 'swiper/css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 
-import Atropos from 'atropos/react';
-
 const BASE_DIR = "/images/skills/";
 
 const SkillsSection = () => {
