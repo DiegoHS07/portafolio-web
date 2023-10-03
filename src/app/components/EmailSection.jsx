@@ -35,7 +35,7 @@ const EmailSection = () => {
     useEffect(() => {
         if(dataSubmitted != ''){
             const callFunction = sendEmailContact(dataSubmitted);
-            toast.promise(callFunction), 
+            toast.promise(callFunction, 
                 {
                     loading: "Enviando...",
                     error: "Error al enviar el correo. Inténtalo de nuevo",
@@ -44,6 +44,7 @@ const EmailSection = () => {
                 {
                     duration: 10000,
                 }
+            );
         }
     }, [dataSubmitted]);
 
