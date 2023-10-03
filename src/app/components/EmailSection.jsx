@@ -1,39 +1,51 @@
 "use client";
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { motion } from "framer-motion";
 import GithubIcon from "../../../public/github-icon.svg";
 import LinkedInIcon from "../../../public/linkedin-icon.svg";
 import Link from 'next/link';
 import Image from 'next/image';
+import {Toaster, toast} from 'react-hot-toast';
 
 const EmailSection = () => {
-  const [emailSubmitted, setEmailSubmitted] = useState(false);
+    const [dataSubmitted, setDataSubmitted] = useState('');
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const data = {
-        email: e.target.email.value,
-        subject: e.target.subject.value,
-        message: e.target.message.value,
-    };
-
-    const response = await fetch('/api/send', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            "Access-Control-Allow-Origin": "*",
-        },
-        body: JSON.stringify(data),
-    });
-
-    if(response.status === 200){
-        console.log("Mensaje enviado");
-        e.target.email.value = '';
-        e.target.subject.value = '';
-        e.target.message.value = '';
-        setEmailSubmitted(true);
+    const sendEmailContact = (data) =>{
+        return fetch('/api/send', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                "Access-Control-Allow-Origin": "*",
+            },
+            body: JSON.stringify(data),
+        })
     }
-  }
+    
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const data = {
+            email: e.target.email.value,
+            subject: e.target.subject.value,
+            message: e.target.message.value,
+        };
+        setDataSubmitted(data);
+        e.target.reset();
+    }
+
+    useEffect(() => {
+        if(dataSubmitted != ''){
+            const callFunction = sendEmailContact(dataSubmitted);
+            toast.promise(callFunction), 
+                {
+                    loading: "Enviando...",
+                    error: "Error al enviar el correo. Inténtalo de nuevo",
+                    success: "Correo enviado, pronto estaremos en contacto"
+                },
+                {
+                    duration: 10000,
+                }
+        }
+    }, [dataSubmitted]);
 
   return <motion.section 
     id='contact' name="contact" 
@@ -117,15 +129,9 @@ const EmailSection = () => {
             >
                 Enviar mensaje
             </button>
-            {
-                emailSubmitted && (
-                    <p className='text-primary-500 text-sm mt-2'>
-                        Email enviado correctamente!
-                    </p>
-                )
-            }
         </form>
     </div>
+    <Toaster position="bottom-center"/>
   </motion.section>
 }
 
