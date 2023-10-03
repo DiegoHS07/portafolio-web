@@ -39,7 +39,7 @@ const EmailSection = () => {
                 {
                     loading: "Enviando...",
                     error: "Error al enviar el correo. Inténtalo de nuevo",
-                    success: "Correo enviado, pronto estaremos en contacto"
+                    success: "Correo enviado, pronto te responderé"
                 },
                 {
                     duration: 10000,
