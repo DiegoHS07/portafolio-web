@@ -121,7 +121,7 @@ export const projectsData = [
   {
     id: 5,
     title: "TETRIS WEB",
-    description: "Videojuego web para practicar logica y creación/actualización de componentes",
+    description: "Videojuego web para practicar lógica y creación/actualización de componentes",
     image: "/images/projects/tetris.jpg",
     tag: ["Todos", "Web"],
     gitUrl: "https://github.com/DiegoHS07/tetris-project",
