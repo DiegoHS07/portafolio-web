@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 const HeroSection = () => {
   return (
-    <section id='about' name="about" className='lg:pt-20'>
+    <section className='lg:pt-20'>
         <div  className="grid grid-cols-1 sm:grid-cols-12">
             <motion.div 
                 initial={{opacity:0, scale: 0.5}} 

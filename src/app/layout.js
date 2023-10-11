@@ -12,7 +12,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="es" suppressHydrationWarning={true}>
       <head>
-        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="shortcut icon" href="./DH.svg" />
       </head>
       <body className={inter.className}>{children}</body>
     </html>
