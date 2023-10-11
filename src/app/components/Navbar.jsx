@@ -6,6 +6,7 @@ import NavLink from '../components/NavLink';
 import {Bars3Icon, XMarkIcon} from "@heroicons/react/24/solid";
 import MenuOverlay from './MenuOverlay';
 import { navLinks } from '../data/navLinks.js';
+import Image from 'next/image';
 
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
@@ -18,7 +19,8 @@ const Navbar = () => {
         className="fixed mx-auto border border-[#33353F] top-0 left-0 right-0 z-20 bg-[#121212] bg-opacity-100"
     >
         <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2">
-            <Link href={"/"} className="text-2xl md:text-5xl text-white font-semibold">
+            <Link href={"/"} className="text-2xl md:text-4xl text-white font-semibold flex flex-row items-center">
+                <Image src='./DH.svg' width={50} height={50} className='text-white' alt='Icon DH portafolio'/>
                 DH
             </Link>
             <div className="mobile-menu block md:hidden">
