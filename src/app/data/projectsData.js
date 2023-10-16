@@ -121,10 +121,43 @@ export const projectsData = [
   {
     id: 5,
     title: "TETRIS WEB",
-    description: "Videojuego web para practicar lógica y creación/actualización de componentes",
+    description:
+      "Videojuego web para practicar lógica y creación/actualización de componentes",
     image: "/images/projects/tetris.jpg",
     tag: ["Todos", "Web"],
     gitUrl: "https://github.com/DiegoHS07/tetris-project",
+    skills: [
+      {
+        name: "GIT",
+        icon: "git.png",
+      },
+      {
+        name: "HTML",
+        icon: "html.png",
+      },
+      {
+        name: "CSS",
+        icon: "css.png",
+      },
+      {
+        name: "Javascript",
+        icon: "javascript.png",
+      },
+      {
+        name: "Vite",
+        icon: "vite.png",
+      },
+    ],
+  },
+  {
+    id: 6,
+    title: "Clon Google Translate",
+    description:
+      "Traductor de texto basado en Google Translate, con clipboard y reproductor",
+    image: "/images/projects/Clon-Google-Translate.png",
+    tag: ["Todos", "Web"],
+    gitUrl: "https://github.com/DiegoHS07/clon-google-translate",
+    previewUrl: "https://clon-google-translate-rho.vercel.app/",
     skills: [
       {
         name: "GIT",
