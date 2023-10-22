@@ -32,6 +32,10 @@ export const skillsData = [
     icon: "vite.png",
   },
   {
+    name: "Node.JS",
+    icon: "node.png",
+  },
+  {
     name: "CELLS",
     icon: "cells.png",
   },

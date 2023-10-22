@@ -181,4 +181,58 @@ export const projectsData = [
       },
     ],
   },
+  {
+    id: 7,
+    title: "TO DO App",
+    description:
+      "Aplicación To Do creada con Flutter, con persistencia de datos de las tareas",
+    image: "/images/projects/todo_flutter.png",
+    tag: ["Todos", "Movil"],
+    gitUrl: "https://github.com/DiegoHS07/todo_flutter_app",
+    skills: [
+      {
+        name: "GIT",
+        icon: "git.png",
+      },
+      {
+        name: "DART",
+        icon: "dart.png",
+      },
+      {
+        name: "FLUTTER",
+        icon: "flutter.png",
+      },
+    ],
+  },
+  {
+    id: 8,
+    title: "Chat Tiempo Real",
+    description:
+      "Chat creado con NodeJs y socket io, para comunicación en tiempo real",
+    image: "/images/projects/chat-node.png",
+    tag: ["Todos", "Web"],
+    gitUrl: "https://github.com/DiegoHS07/chat-tiempo-real",
+    skills: [
+      {
+        name: "GIT",
+        icon: "git.png",
+      },
+      {
+        name: "HTML",
+        icon: "html.png",
+      },
+      {
+        name: "CSS",
+        icon: "css.png",
+      },
+      {
+        name: "Javascript",
+        icon: "javascript.png",
+      },
+      {
+        name: "NodeJs",
+        icon: "node.png",
+      },
+    ],
+  },
 ];
